@@ -4,66 +4,101 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Poovarasan J | Portfolio</title>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <style>
   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
-    
   }
 
   body {
     font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(145deg, #0d1f81, #080124);
-     color: #ffffff;
+    background: linear-gradient(145deg, #0b0f1f, #141a33);
+    color: #ffffff;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  /* Floating icons */
+  .float-wrap {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .float {
+    position: absolute;
+    display: grid;
+    place-items: center;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(6px);
+    animation: floatUp var(--dur) linear infinite;
+    font-size: 22px;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    filter: drop-shadow(0 0 0px transparent);
+    transition: filter 0.3s ease;
+  }
+  .float i {
+    background: linear-gradient(90deg, #00c6ff, #7f5af0);
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+  @keyframes floatUp {
+    0% { transform: translateY(180%); opacity: 0; filter: drop-shadow(0 0 0px transparent); }
+    20% { opacity: 1; }
+    45% { filter: drop-shadow(0 0 8px rgba(0, 198, 255, 0.8)); }
+    55% { filter: drop-shadow(0 0 8px rgba(127, 90, 240, 0.8)); }
+    80% { opacity: 1; }
+    100% { transform: translateY(-500%); opacity: 0; filter: drop-shadow(0 0 0px transparent); }
   }
 
   header {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(20, 20, 20, 0.7);
+    background: rgba(10, 10, 30, 0.85);
     backdrop-filter: blur(10px);
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
     z-index: 1000;
-    border-bottom: 1px solid #444;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
   }
-
   header h1 {
     font-size: 1.5rem;
-    color: #0f99d4f4;
+    color: #00c6ff;
   }
-
   nav {
     display: flex;
     gap: 1.5rem;
   }
-
   nav a {
-    color: #0f99d4f4;
+    color: #00c6ff;
     text-decoration: none;
     font-weight: bold;
     position: relative;
   }
-
   nav a::after {
     content: "";
     display: block;
     width: 0;
     height: 2px;
-    background: #82caff;
+    background: #7f5af0;
     transition: width 0.3s;
   }
-
   nav a:hover::after {
     width: 100%;
-    background: #82caff;
-    box-shadow: 0 0 10px #82caff;
+    background: #7f5af0;
+    box-shadow: 0 0 10px #7f5af0;
   }
 
   section {
@@ -72,8 +107,9 @@
     opacity: 0;
     transform: translateY(50px);
     transition: all 1s ease;
+    position: relative;
+    z-index: 1;
   }
-
   section.visible {
     opacity: 1;
     transform: translateY(0);
@@ -84,59 +120,137 @@
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
-    background: linear-gradient(145deg, #0d1f81, #080124);
   }
-
   .intro-text {
     flex: 1;
     min-width: 280px;
     max-width: 600px;
     animation: slideInLeft 1s ease forwards;
   }
-
   .intro-text h2 {
     font-size: 2.5rem;
     color: #fff;
   }
-
-  .intro-text p {
-    margin-top: 1rem;
-    line-height: 1.6;
-  }
-
   .intro-text .btn {
     margin-top: 2rem;
     display: inline-block;
     padding: 0.75rem 1.5rem;
-    background: #82caff;
+    background: linear-gradient(90deg, #82caff, #128be1);
     color: #000;
     border-radius: 10px;
-    box-shadow: 0 0 15px #82caff;
+    box-shadow: 0 0 15px rgba(0,198,255,0.5);
     transition: all 0.3s ease;
+  }
+  .intro-text .resume-btn .btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(0,198,255,0.7);
+  }
+  .intro-img img {
+    width: 400px;
+    border-radius: 50%;
+    border: 4px solid #00c6ff;
+    margin-top: 1rem;
+    animation: slideInRight 1s ease forwards;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+  .intro-img img:hover {
+    box-shadow: 0 0 55px #00c6ff;
+    transform: scale(1.03);
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    padding-top: 2rem;
+  }
+  .card {
+    background: linear-gradient(145deg, #141a33, #1e264d);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    margin: 0 auto;
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+    opacity: 0;
+    transform: translateY(50px);
+    font-size: 1.1rem;
+    max-width: 600px;
+    width: 100%;
+    color: #f0f0f0;
+  }
+  .card.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(217, 221, 222, 0.5), 0 0 25px rgba(127,90,240,0.5);
+  }
+
+  footer {
+    text-align: center;
+    padding: 2rem;
+    background: #0b0f1f;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    color: #bbb;
+    z-index: 1;
+    position: relative;
+  }
+
+  @keyframes slideInLeft {
+    from { opacity: 0; transform: translateX(-100px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes slideInRight {
+    from { opacity: 0; transform: translateX(100px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+
+  .typewriter {
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+    border-right: 2px solid #00c6ff;
+    white-space: nowrap;
+    letter-spacing: 2px;
+    display: inline-block;
+    font-size: 2rem;
+    color: #00c6ff;
+    text-shadow: 0 0 5px #00c6ff, 0 0 10px #00c6ff;
+    animation: blink 0.75s step-end infinite;
+  }
+  @keyframes blink { 30% { border-color: transparent; } }
+
+   .contact-form {
+    max-width: 600px;
+    margin: 2rem auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+
+  .contact-form .btn {
+    align-self: flex-start;
+    background: #82caff;
+    color: #000;
+    font-weight: bold;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 0 15px #82caff;
   }
 
   .intro-text .btn:hover,
   .contact-form .btn:hover {
-    background: #55aaff;
     transform: scale(1.05);
-    box-shadow: 0 0 25px #82caff;
+  box-shadow: 0 0 25px #1e264d, 0 0 40px  #1e264d;
+    background: linear-gradient(145deg, #141a33, #1e264d);
+  color: #fff;
   }
-  
-.intro-img img {
-  width: 400px;
-  border-radius: 50%;
-  border: 4px solid #82caff;
-  margin-top: 1rem;
-  animation: slideInRight 1s ease forwards;
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
-}
-
-.intro-img img:hover {
-  box-shadow: 0 0 55px #82caff;
-  transform: scale(1.03);
-}
-
-
+ 
   .social-icons {
     margin-top: 1.5rem;
   }
@@ -155,86 +269,210 @@
     text-shadow: 0 0 10px #82caff, 0 0 20px #82caff;
   }
 
-  .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-    padding-top: 2rem;
-  }
+  .timeline {
+  position: relative;
+  max-width: 900px;
+  margin: auto;
+  padding-top: 2rem;
+}
 
-  .card {
-    background: linear-gradient(145deg, #0d1f81, #5b3777);
-    backdrop-filter: blur(10px);
-    padding: 2rem;
-    margin: 0 auto;
-    border-radius: 16px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-    opacity: 0;
-    transform: translateY(50px);
-    font-size: 1.1rem;
-    max-width: 600px;
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  background: #eaedef;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 0 15px #82caff;
+}
+
+.container {
+  padding: 15px 30px;
+  position: relative;
+  width: 50%;
+}
+
+.container.left {
+  left: 0;
+}
+
+.container.right {
+  left: 50%;
+}
+
+.content {
+    background: linear-gradient(145deg, #141a33, #1e264d);
+  backdrop-filter: blur(8px);
+  padding: 1rem;
+  border-radius: 10px;
+  border: 1px solid #444;
+  position: relative;
+  box-shadow: 0 0 10px #82caff33;
+  color: #f0f0f0;
+  transition: transform 0.3s, box-shadow 0.3s;
+
+}
+
+.container::before {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  right: -8px;
+  background: #82caff;
+  border-radius: 50%;
+  top: 15px;
+  box-shadow: 0 0 10px #82caff;
+  z-index: 1;
+}
+
+.container.right::before {
+  left: -8px;
+  right: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
     width: 100%;
-    color: #f0f0f0;
+    padding-left: 70px;
+    padding-right: 25px;
   }
 
-  .card.visible {
+  .container.right {
+    left: 0;
+  }
+
+  .timeline::after {
+    left: 20px;
+  }
+
+  .container::before,
+  .container.right::before {
+    left: 12px;
+  }
+}
+
+.content.visible {
     opacity: 1;
     transform: translateY(0);
   }
+  .content:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(217, 221, 222, 0.5), 0 0 25px rgba(127,90,240,0.5);
+  }
 
-  .card:hover,
-  .content:hover,
+.float-wrap {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+
+  /* Floating icons wrapper */
+.float-wrap {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Each floating icon */
+.float {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  font-size: 22px;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: floatUp var(--dur) linear infinite;
+}
+
+/* Icon color gradient */
+.float i {
+  background: linear-gradient(90deg, #82caff, #128be1);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+/* Floating animation */
+@keyframes floatUp {
+  0% {
+    transform: translateY(180%);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-500%);
+    opacity: 0;
+  }
+}
+
+/* Glow effect mid-way */
+@keyframes floatUp {
+  0% {
+    transform: translateY(180%);
+    opacity: 0;
+    filter: drop-shadow(0 0 0px transparent);
+  }
+  10% {
+    opacity: 1;
+  }
+  50% {
+    filter: drop-shadow(0 0 12px #82caff);
+  }
+  80% {
+    opacity: 1;
+    filter: drop-shadow(0 0 6px rgba(130, 202, 255, 0.7));
+  }
+  100% {
+    transform: translateY(-500%);
+    opacity: 0;
+    filter: drop-shadow(0 0 0px transparent);
+  }
+}
+
+.resume-btn {
+  margin-top: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(90deg, #82caff, #128be1);
+  color: #000000;
+  font-weight: bold;
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 0 15px  #1e264d;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.resume-btn i {
+  font-size: 1.2rem;
+}
+
+.resume-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #1e264d, 0 0 40px  #1e264d;
+    background: linear-gradient(145deg, #141a33, #1e264d);
+  color: #fff;
+}
+
   .form-group input:focus,
   .form-group textarea:focus {
     transform: scale(1.05);
     box-shadow: 0 0 15px #0676c6, 0 0 25px #128be1;
     transition: 0.3s ease;
   }
-
-  .info-block p {
-    margin: 1rem 0;
-    font-size: 1.1rem;
-  }
-
-  footer {
-    text-align: center;
-    padding: 2rem;
-    background: #1a1a1a;
-    border-top: 1px solid #333;
-    color: #999;
-  }
-
-  @keyframes slideInLeft {
-    from {
-      opacity: 0;
-      transform: translateX(-100px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-
-  @keyframes slideInRight {
-    from {
-      opacity: 0;
-      transform: translateX(100px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-
-  .contact-form {
-    max-width: 600px;
-    margin: 2rem auto 0;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-
   .form-group input,
   .form-group textarea {
     width: 100%;
@@ -252,137 +490,27 @@
     color: #bbb;
   }
 
-  .contact-form .btn {
-    align-self: flex-start;
-    background: #82caff;
-    color: #000;
-    font-weight: bold;
-    padding: 0.75rem 1.5rem;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: 0.3s;
-    box-shadow: 0 0 15px #82caff;
-  }
-
-  .timeline {
-    position: relative;
-    max-width: 900px;
-    margin: auto;
-    padding-top: 2rem;
-  }
-
-  .timeline::after {
-    content: '';
-    position: absolute;
-    width: 6px;
-    background: #eaedef;
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    box-shadow: 0 0 15px #82caff;
-  }
-
-  .container {
-    padding: 15px 30px;
-    position: relative;
-    width: 50%;
-  }
-
-  .container.left {
-    left: 0;
-  }
-
-  .container.right {
-    left: 50%;
-  }
-
-  .content {
-    background: linear-gradient(145deg, #0d1f81, #5b3777);
-    backdrop-filter: blur(8px);
-    padding: 1rem;
-    border-radius: 10px;
-    border: 1px solid #444;
-    position: relative;
-    box-shadow: 0 0 10px #82caff33;
-    color: #f0f0f0;
-  }
-
-  .container::before {
-    content: '';
-    position: absolute;
-    width: 16px;
-    height: 16px;
-    right: -8px;
-    background: #82caff;
-    border-radius: 50%;
-    top: 15px;
-    box-shadow: 0 0 10px #82caff;
-    z-index: 1;
-  }
-
-  .container.right::before {
-    left: -8px;
-    right: auto;
-  }
-
-  @media screen and (max-width: 768px) {
-    .container {
-      width: 100%;
-      padding-left: 70px;
-      padding-right: 25px;
-    }
-
-    .container.right {
-      left: 0;
-    }
-
-    .timeline::after {
-      left: 20px;
-    }
-
-    .container::before,
-    .container.right::before {
-      left: 12px;
-    }
-  }
-
- .typewriter {
-  font-family: 'Poppins', sans-serif;
-  overflow: hidden;
-  border-right: 2px solid #82caff;
-  white-space: nowrap;
-  letter-spacing: 2px;
-  display: inline-block;
-  font-size: 2rem;
-  color: #82caff;
-  text-shadow: 0 0 5px #82caff, 0 0 10px #82caff;
-  animation: blink 0.75s step-end infinite;
-}
-
-@keyframes blink {
-  30% { border-color: transparent; }
-}
-
-</style>
-
+  </style>
 </head>
+
 <body>
+  <!-- Floating Icons Container -->
+  <div class="float-wrap" id="floatContainer" aria-hidden="true"></div>
+
   <header>
     <h1>Poovarasan J</h1>
     <nav>
-  <a href="#intro">Home</a>
-  <a href="#projects">Projects</a>
-  <a href="#education">Education</a>
-  <a href="#skills">Skills</a>
-  <a href="#achievements">Workshops</a>
-  <a href="#certificates">Certificates</a>
-  <a href="#contact">Contact</a>
+      <a href="#intro">Home</a>
+      <a href="#projects">Projects</a>
+      <a href="#education">Education</a>
+      <a href="#skills">Skills</a>
+      <a href="#achievements">Workshops</a>
+      <a href="#certificates">Certificates</a>
+      <a href="#contact">Contact</a>
     </nav>
   </header>
 
-  <!-- Intro -->
+   <!-- Intro -->
   <section class="intro" id="intro">
     <div class="intro-text"> 
       <h2>Hello,</h2>
@@ -392,7 +520,9 @@
       <p>I am passionate about technology, with a keen interest in computers and a commitment to staying updated with the latest industry trends. I'm dedicated to improving my skills and expanding my knowledge continuously.</p>
       <p>Currently pursuing a BTech in Information Technology at PSNA College of Engineering and Technology, I expect to graduate in 2026. My studies are providing me with the essential knowledge and practical skills for a successful career in tech.</p>
       <p>Outside of coding, I enjoy gaming and listening to music. I'm always eager to take on new challenges and believe in the importance of lifelong learning.</p>
-      <a href="#projects" class="btn">View My Work ↓</a>
+      <a href="#projects" class="btn">View My Work ↓</a> 
+      <a href="Poovarasan_J_Java_Resume.pdf" download class="resume-btn"> <i class="fa-solid fa-download"></i> Download Resume </a>
+
       <div class="social-icons">
         <a href="https://mail.google.com/mail/u/0/?fs=1&to=poovarasanpoovi20@gmail.com&su=Hello%20Poovarasan&body=I%20visited%20your%20portfolio!&tf=cm" target="_blank" title="Gmail"><i class="fas fa-envelope"></i></a>
         <a href="https://www.linkedin.com/in/poovarasan-j-516332256" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
@@ -400,33 +530,35 @@
         <a href="https://www.instagram.com/mr_poovarasan_tn_63/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
       </div>
     </div>
+   
     <div class="intro-img">
-      <img src="poovarasan pic.png" alt="Poovarasan J" />
+      <img src="C:\Users\poova\Downloads\portfolio\poovarasan pic.png" alt="Poovarasan J" />
     </div>
+    
   </section>
 
   <!-- Projects -->
 <section id="projects">
   <h2>Projects</h2>
   <div class="projects-grid">
-    <div class="card">
-      <h3>Railway Reservation System</h3><br>
-      <p>Enables users to search trains, check seat availability, and book tickets efficiently.</p>
-    </div>
+   <div class="card">
 
-    <div class="card">
-      <h3>Smart Irrigation System</h3><br>
-      <p>Automatically waters plants based on soil moisture, helping farmers save time and resources.</p>
-    </div>
-
-    <div class="card">
-      <h3>Placement Management Website</h3><br>
+   <h3>Placement Management Website</h3><br>
       <p>Helps colleges manage student data, company drives, and placement records in one system.</p>
-    </div>
+    <br>
+  <a href="C:\Users\poova\Downloads\jp and md edit\jp and md\main dashboard.html" 
+     style="color: #ffffff; background-color: #007bff; padding: 5px 10px; text-decoration: none; border-radius: 5px; font-weight: bold;">
+     more Info
+  </a>
+</div>
 
-    <div class="card">
+ <div class="card">
       <h3>College Event Management</h3><br>
-      <p>Streamlines the planning, registration, and execution of college events for organizers and students.</p>
+      <p>Streamlines the planning, registration, and execution of college events for organizers and students.</p><br>
+       <a href="C:\Users\poova\Downloads\Telegram Desktop\College Event Management\College Event Management\public\homemain.html" 
+     style="color: #ffffff; background-color: #007bff; padding: 5px 10px; text-decoration: none; border-radius: 5px; font-weight: bold;">
+     more Info
+  </a>
     </div>
   </div>
 </section>
@@ -434,30 +566,29 @@
 
   <!-- Education Timeline -->
   <section id="education">
-    <h2>Education</h2>
-    <div class="timeline">
-      <div class="container left">
-        <div class="content">
-          <h1>B.Tech - IT</h1><br>
-          <p>PSNA College, 2022–2026<br>CGPA: 7.93</p>
-        </div>
-      </div>
-      <div class="container right">
-        <div class="content">
-          <h1>HSC</h1><br>
-          <p>GOVT.HR.SEC.SCHOOL-S.S.KOTTAI<br>2021–2022 | 82.67%</p>
-        </div>
-      </div>
-      <div class="container left">
-        <div class="content">
-          <h1>SSLC</h1><br>
-          <p>GOVT.HR.SEC.SCHOOL-S.S.KOTTAI<br>2019–2020 | 71.4%</p>
-        </div>
+  <h2>Education</h2>
+  <div class="timeline">
+    <div class="container left">
+      <div class="content">
+        <h1>B.Tech - IT</h1><br>
+        <p>PSNA College, 2022–2026<br>CGPA: 7.93</p>
       </div>
     </div>
-  </section>
+    <div class="container right">
+      <div class="content">
+        <h1>HSC</h1><br>
+        <p>GOVT.HR.SEC.SCHOOL-S.S.KOTTAI<br>2021–2022 | 82.67%</p>
+      </div>
+    </div>
+    <div class="container left">
+      <div class="content">
+        <h1>SSLC</h1><br>
+        <p>GOVT.HR.SEC.SCHOOL-S.S-KOTTAI<br>2019–2020 | 71.4%</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <!-- Existing sections above remain unchanged -->
 
 <!-- Skills and More -->
 <section id="skills">
@@ -558,12 +689,6 @@
     </form>
   </section>
 
-
-
-  <footer>
-    <p>© 2025 Poovarasan J. All rights reserved.</p>
-  </footer>
-
   <script>
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -594,7 +719,87 @@
   window.onload = typeWriter;
 </script>
 
+  <footer>
+    <p>© 2025 Poovarasan J. All rights reserved.</p>
+  </footer>
 
+  <script>
+    // Tech-related icons only
+    const icons = [
+      "fa-code", "fa-laptop-code", "fa-database", "fa-network-wired",
+      "fa-microchip", "fa-server", "fa-terminal", "fa-robot","fa-palette",       
+  "fa-bezier-curve",   
+  "fa-object-group", 
+  "fa-vector-square" 
+    ];
+    const container = document.getElementById("floatContainer");
+
+    for (let i = 0; i < 15; i++) {
+      const div = document.createElement("div");
+      div.classList.add("float");
+      const icon = document.createElement("i");
+      icon.classList.add("fa-solid", icons[Math.floor(Math.random() * icons.length)]);
+      div.style.left = Math.random() * 90 + "%";
+      div.style.top = (90 + Math.random() * 10) + "%";
+      div.style.width = div.style.height = (40 + Math.random() * 50) + "px";
+      div.style.setProperty("--dur", (18 + Math.random() * 12) + "s");
+      div.style.animationDelay = `${Math.random() * 5}s`; // smooth flow
+      div.appendChild(icon);
+      container.appendChild(div);
+    }
+
+    // Intersection animations
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.2 });
+    document.querySelectorAll('section, .card').forEach(el => observer.observe(el));
+
+    // Typewriter effect
+    const text = "I'm Poovarasan J";
+    const typeText = document.getElementById("type-text");
+    let i = 0;
+    function typeWriter() {
+      if (i < text.length) {
+        typeText.innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, 100);
+      }
+    }
+    window.onload = typeWriter;
+  </script>
+
+  <script>
+    // Floating icons generation
+const icons = [
+  "fa-code", "fa-laptop-code", "fa-database", "fa-network-wired",
+  "fa-microchip", "fa-server", "fa-terminal", "fa-robot"
+];
+const container = document.getElementById("floatContainer");
+
+for (let i = 0; i < 12; i++) {
+  const div = document.createElement("div");
+  div.classList.add("float");
+  
+  const icon = document.createElement("i");
+  icon.classList.add("fa-solid", icons[Math.floor(Math.random() * icons.length)]);
+  
+  div.style.left = Math.random() * 90 + "%";
+  div.style.top = (90 + Math.random() * 10) + "%";
+  div.style.width = div.style.height = (40 + Math.random() * 40) + "px";
+  div.style.setProperty("--dur", (18 + Math.random() * 10) + "s");
+  
+  div.appendChild(icon);
+  container.appendChild(div);
+}
+
+// Always load at top when page refreshes
+window.addEventListener("load", function () {
+    document.querySelector("#intro").scrollIntoView({ behavior: "smooth" });
+});
+  </script>
+
+  
 </body>
 </html>
-
