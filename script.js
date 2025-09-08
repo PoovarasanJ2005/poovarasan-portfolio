@@ -157,3 +157,48 @@ document.querySelectorAll(".card-spotlight").forEach(card => {
 });
 
 
+
+// --- Profile Card Modal with all your requested features ---
+const avatarImg = document.getElementById("sidebar-avatar");
+const profileCardModal = document.getElementById("profile-card-modal");
+
+if (avatarImg && profileCardModal) {
+  const card = profileCardModal.querySelector(".pc-card");
+  const shine = profileCardModal.querySelector(".pc-shine");
+  const overlay = profileCardModal.querySelector(".profile-card-overlay");
+
+  // Function to close the modal
+  const closeModal = () => {
+    profileCardModal.classList.remove("active");
+    // Reset the card's tilt when it closes
+    card.style.transform = `rotateX(0deg) rotateY(0deg)`;
+  };
+
+  // Show the modal when the mouse hovers over the small avatar
+  avatarImg.addEventListener("mouseenter", () => {
+    profileCardModal.classList.add("active");
+  });
+
+  // Hide the modal when the mouse leaves the entire modal area
+  profileCardModal.addEventListener("mouseleave", closeModal);
+
+  // Hide the modal when the overlay (the "balance area") is clicked
+  overlay.addEventListener("click", closeModal);
+
+  // Tilt effect for the card (this is the same shiny tilt effect from before)
+  card.addEventListener("mousemove", (e) => {
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+    const rotateX = ((y - centerY) / centerY) * 10;
+    const rotateY = ((x - centerX) / centerX) * -10;
+
+    card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    shine.style.setProperty("--pointer-x", `${x}px`);
+    shine.style.setProperty("--pointer-y", `${y}px`);
+  });
+}
+
+

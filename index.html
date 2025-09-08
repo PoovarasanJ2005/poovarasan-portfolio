@@ -23,10 +23,23 @@
 
       <div class="sidebar-info">
 
-        <figure class="avatar-box">
-          <img src="./poovarasan pic.png" alt="Poovarasan J" width="80">
-        </figure>
+     <figure class="avatar-box">
+  <img src="./poovarasan pic.png" alt="Poovarasan J" width="100" id="sidebar-avatar">
+</figure>
 
+<div id="profile-card-modal" class="profile-card-modal-container">
+  <div class="profile-card-overlay"></div>
+  <div class="pc-card-wrapper">
+    <section class="pc-card">
+      <div class="pc-inside">
+        <div class="pc-shine"></div>
+        <div class="pc-content pc-avatar-content">
+          <img class="avatar" src="./poovarasan pic.png" alt="Poovarasan J" />
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
         <div class="info-content">
           <h1 class="name" title="Poovarasan J">Poovarasan J</h1>
           <p class="title">Aspiring Java Developer & Data Analyst</p>
@@ -147,8 +160,6 @@
   </div>
 </article>
 
-
-
       <article class="resume" data-page="resume">
 
         <header>
@@ -213,48 +224,108 @@
           </ol>
         </section>
 
-        <section class="timeline">
-          <div class="title-wrapper">
-            <div class="icon-box">
-              <ion-icon name="ribbon-outline"></ion-icon>
-            </div>
-            <h3 class="h3">Certifications</h3>
-          </div>
-          <ol class="timeline-list">
-             <li class="timeline-item">
-              <a href="ui ux certificate.pdf" target="_blank"><h4 class="h4 timeline-item-title">Principle of UX/UI – Coursera</h4></a>
-              <span>Oct 2024</span>
-            </li>
-             <li class="timeline-item">
-              <a href="poovarasan_20-Learn Java.pdf" target="_blank"><h4 class="h4 timeline-item-title">Learn Java – CodeChef</h4></a>
-              <span>Jun 2025</span>
-            </li>
-             <li class="timeline-item">
-              <a href="udemy.jpg" target="_blank"><h4 class="h4 timeline-item-title">HTML, CSS, JS – Udemy</h4></a>
-              <span>May 2025</span>
-            </li>
-            <li class="timeline-item">
-              <a href="learn sql on codechef.pdf" target="_blank"><h4 class="h4 timeline-item-title">Learn SQL – CodeChef</h4></a>
-              <span>Aug 2025</span>
-            </li>
-            <li class="timeline-item">
-              <a href="power bi.pdf" target="_blank"><h4 class="h4 timeline-item-title">Power BI Beginners – Simplilearn</h4></a>
-              <span>Aug 2025</span>
-            </li>
-            <li class="timeline-item">
-              <a href="Poovarasan J MongoDB Certification.pdf" target="_blank"><h4 class="h4 timeline-item-title">MongoDB Certification</h4></a>
-              <span>Jul 2024</span>
-            </li>
-            <li class="timeline-item">
-                <a href="CertificateOfCompletion_Career Essentials in Data Analysis by Microsoft and LinkedIn.pdf" target="_blank"><h4 class="h4 timeline-item-title">Career Essentials in Data Analysis by Microsoft & LinkedIn</h4></a>
-                <span>Aug 2025</span>
-            </li>
-            <li class="timeline-item">
-                <a href="ms excel certificate.pdf" target="_blank"><h4 class="h4 timeline-item-title">Introduction to MS Excel - Simplilearn</h4></a>
-                <span>Aug 2025</span>
-            </li>
-          </ol>
-        </section>
+       <section class="timeline">
+  <div class="title-wrapper">
+    <div class="icon-box">
+      <ion-icon name="ribbon-outline"></ion-icon>
+    </div>
+    <h3 class="h3">Certifications</h3>
+  </div>
+
+ <ol class="timeline-list">
+
+  <li class="timeline-item" data-certificate>
+    <a href="CertificateOfCompletion_Career Essentials in Data Analysis by Microsoft and LinkedIn.pdf" target="_blank">
+      <h4 class="h4 timeline-item-title">Career Essentials in Data Analysis – Microsoft & LinkedIn</h4>
+    </a>
+    <span>August 21, 2025</span>
+    <div class="certificate-preview">
+      <iframe src="CertificateOfCompletion_Career Essentials in Data Analysis by Microsoft and LinkedIn.pdf" width="350" height="250"></iframe>
+    </div>
+  </li>
+  
+  <li class="timeline-item" data-certificate>
+    <a href="ms excel certificate.pdf" target="_blank">
+      <h4 class="h4 timeline-item-title">Introduction to MS Excel – Simplilearn</h4>
+    </a>
+    <span>August 17, 2025</span>
+    <div class="certificate-preview">
+      <iframe src="ms excel certificate.pdf" width="350" height="250"></iframe>
+    </div>
+  </li>
+
+  <li class="timeline-item" data-certificate>
+    <a href="learn sql on codechef.pdf" target="_blank">
+      <h4 class="h4 timeline-item-title">Learn SQL – CodeChef</h4>
+    </a>
+    <span>August 8, 2025</span>
+    <div class="certificate-preview">
+      <iframe src="learn sql on codechef.pdf" width="350" height="250"></iframe>
+    </div>
+  </li>
+
+  <li class="timeline-item" data-certificate>
+    <a href="power bi.pdf" target="_blank">
+      <h4 class="h4 timeline-item-title">Power BI for Beginners – Simplilearn</h4>
+    </a>
+    <span>August 3, 2025</span>
+    <div class="certificate-preview">
+      <iframe src="power bi.pdf" width="350" height="250"></iframe>
+    </div>
+  </li>
+
+  <li class="timeline-item" data-certificate>
+    <a href="poovarasan_20-Learn Java.pdf" target="_blank">
+      <h4 class="h4 timeline-item-title">Learn Java – CodeChef</h4>
+    </a>
+    <span>June 27, 2025</span>
+    <div class="certificate-preview">
+      <iframe src="poovarasan_20-Learn Java.pdf" width="350" height="250"></iframe>
+    </div>
+  </li>
+
+  <li class="timeline-item" data-certificate>
+    <a href="udemy.jpg" target="_blank">
+      <h4 class="h4 timeline-item-title">Master JavaScript, HTML, & CSS – Udemy</h4>
+    </a>
+    <span>May 13, 2025</span>
+    <div class="certificate-preview">
+      <iframe src="udemy.jpg" width="350" height="250"></iframe>
+    </div>
+  </li>
+
+  <li class="timeline-item" data-certificate>
+    <a href="Poovarasan J MongoDB Certification.pdf" target="_blank">
+      <h4 class="h4 timeline-item-title">MongoDB Developer Path – MongoDB</h4>
+    </a>
+    <span>December 7, 2024</span>
+    <div class="certificate-preview">
+      <iframe src="Poovarasan J MongoDB Certification.pdf" width="350" height="250"></iframe>
+    </div>
+  </li>
+
+  <li class="timeline-item" data-certificate>
+    <a href="ui ux certificate.pdf" target="_blank">
+      <h4 class="h4 timeline-item-title">Principles of UX/UI Design – Meta & Coursera</h4>
+    </a>
+    <span>October 1, 2024</span>
+    <div class="certificate-preview">
+      <iframe src="ui ux certificate.pdf" width="350" height="250"></iframe>
+    </div>
+  </li>
+
+</ol>
+</section>
+
+<!-- Modal for viewing certificate in large size -->
+<div id="certificateModal" class="certificate-modal">
+  <div class="certificate-overlay"></div>
+  <div class="certificate-modal-content">
+    <span class="certificate-close">&times;</span>
+    <img id="modalImage" src="" alt="Certificate Preview">
+  </div>
+</div>
+
 
         <section class="skill">
 
@@ -386,7 +457,7 @@
             </div>
             <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
             <button class="form-btn" type="submit" disabled data-form-btn>
-              <ion-icon name="paper-plane"></ion-icon> 
+              <ion-icon name="paper-plane"></ion-icon>
               <span>Send Message</span>
             </button>
           </form>
