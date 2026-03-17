@@ -2073,53 +2073,104 @@ body.modal-active main {
   #CERTIFICATE PREVIEW & MODAL
 \*-----------------------------------*/
 
-/* Certificate preview below timeline item */
+/* Certificate link title hover */
+.timeline-item a .h4 {
+  color: var(--white-2);
+  transition: color 0.3s ease;
+}
+.timeline-item a:hover .h4 {
+  color: var(--orange-yellow-crayola);
+}
+
+/* Smooth preview reveal */
 .timeline-item .certificate-preview {
-  display: none;
-  margin-top: 12px;
-  text-align: center;
-  animation: fadeIn 0.3s ease-in-out;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-8px);
+  transition:
+    max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity    0.4s ease,
+    transform  0.4s ease;
+  margin-top: 0;
 }
 
 .timeline-item:hover .certificate-preview {
-  display: block;
+  max-height: 320px;
+  opacity: 1;
+  transform: translateY(0);
+  margin-top: 14px;
 }
 
-.timeline-item .certificate-preview img {
-  width: 250px;
-  max-width: 90%;
-  border-radius: 10px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
-  transition: transform 0.3s ease;
-}
-
-.timeline-item .certificate-preview img:hover {
-  transform: scale(1.05);
-}
-
-/* View Big button */
-.view-big-btn {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 6px 14px;
-  font-size: 14px;
-  background: var(--orange-yellow-crayola);
-  color: var(--smoky-black);
+/* Preview card wrapper */
+.timeline-item .certificate-preview iframe {
   border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background 0.3s ease, transform 0.2s ease;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 380px;
+  height: 240px;
+  display: block;
+  margin: 0 auto;
+  box-shadow:
+    0 8px 32px hsla(0, 0%, 0%, 0.5),
+    0 0 0 1px hsla(45, 100%, 72%, 0.15);
+  background: var(--eerie-black-1);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
-.view-big-btn:hover {
-  background: var(--vegas-gold);
-  transform: scale(1.05);
+.timeline-item:hover .certificate-preview iframe {
+  box-shadow:
+    0 12px 40px hsla(0, 0%, 0%, 0.6),
+    0 0 0 2px hsla(45, 100%, 72%, 0.35);
 }
 
-/* Fade-in animation */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+/* "Click to open" hint badge that appears on hover */
+.timeline-item[data-certificate] a {
+  position: relative;
+  display: inline-block;
+}
+
+.timeline-item[data-certificate]:hover a::after {
+  content: '↗ Click to open';
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 10px;
+  color: var(--orange-yellow-crayola);
+  opacity: 0.75;
+  font-weight: var(--fw-400);
+  white-space: nowrap;
+  animation: fadeIn 0.3s ease;
+}
+
+/* Pulse dot on the timeline for certificates */
+.timeline-item[data-certificate]::after {
+  background: var(--orange-yellow-crayola);
+  box-shadow: 0 0 0 3px var(--jet), 0 0 8px hsla(45, 100%, 72%, 0.5);
+  transition: box-shadow 0.3s ease;
+}
+.timeline-item[data-certificate]:hover::after {
+  box-shadow: 0 0 0 3px var(--jet), 0 0 14px hsla(45, 100%, 72%, 0.8);
+}
+
+/* Small image preview (for .jpg certs) */
+.timeline-item .certificate-preview img {
+  width: 100%;
+  max-width: 380px;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+  margin: 0 auto;
+  box-shadow:
+    0 8px 32px hsla(0, 0%, 0%, 0.5),
+    0 0 0 1px hsla(45, 100%, 72%, 0.15);
+  transition: box-shadow 0.3s ease;
+}
+.timeline-item:hover .certificate-preview img {
+  box-shadow:
+    0 12px 40px hsla(0, 0%, 0%, 0.6),
+    0 0 0 2px hsla(45, 100%, 72%, 0.35);
 }
 
 /*-----------------------------------*\
