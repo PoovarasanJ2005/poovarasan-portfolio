@@ -29,14 +29,23 @@ const qsa = (selector, parent = document) => [...parent.querySelectorAll(selecto
 function initLoader() {
     const loader = qs(".loading-screen");
     const hide = () => loader?.classList.add("hidden");
-    window.addEventListener("load", () => setTimeout(hide, 350));
+    if (document.readyState === "complete") {
+        setTimeout(hide, 350);
+    } else {
+        window.addEventListener("load", () => setTimeout(hide, 350));
+    }
     setTimeout(hide, 1200);
 }
 
 function initTheme() {
     const toggle = qs("#themeToggle");
     const icon = toggle?.querySelector("i");
-    const savedTheme = localStorage.getItem("portfolio-theme");
+    let savedTheme = null;
+    try {
+        savedTheme = localStorage.getItem("portfolio-theme");
+    } catch (e) {
+        console.warn("localStorage is not accessible:", e);
+    }
 
     if (savedTheme === "light") {
         document.body.classList.add("light-theme");
@@ -45,7 +54,11 @@ function initTheme() {
 
     toggle?.addEventListener("click", () => {
         const isLight = document.body.classList.toggle("light-theme");
-        localStorage.setItem("portfolio-theme", isLight ? "light" : "dark");
+        try {
+            localStorage.setItem("portfolio-theme", isLight ? "light" : "dark");
+        } catch (e) {
+            console.warn("localStorage is not accessible:", e);
+        }
         icon?.classList.toggle("fa-moon", !isLight);
         icon?.classList.toggle("fa-sun", isLight);
     });
@@ -293,7 +306,7 @@ function initContactForm() {
     });
 }
 
-document.addEventListener("DOMContentLoaded", () => {
+function init() {
     initLoader();
     initTheme();
     initNavigation();
@@ -305,4 +318,10 @@ document.addEventListener("DOMContentLoaded", () => {
     initProjectFilters();
     initProjectModal();
     initContactForm();
-});
+}
+
+if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+} else {
+    init();
+}
