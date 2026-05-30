@@ -2,617 +2,916 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Poovarasan J - B.Tech IT student, Java developer, MERN stack builder, data analyst, and cybersecurity learner. Explore projects, skills, certifications, and resume.">
+    <meta name="keywords"
+        content="Poovarasan J, Java Developer, MERN Stack, Data Analyst, Cybersecurity, Portfolio, Resume">
+    <meta name="author" content="Poovarasan J">
 
-  <!-- SEO Meta Tags -->
-  <title>Poovarasan J | Java Developer & Data Analyst Portfolio</title>
-  <meta name="description"
-    content="Portfolio of Poovarasan J — Aspiring Java Developer & Data Analyst. BTech IT student at PSNA College of Engineering. Skilled in MERN Stack, Data Visualization, MongoDB, and more.">
-  <meta name="keywords"
-    content="Poovarasan J, Java Developer, Data Analyst, MERN Stack, Portfolio, MongoDB, Power BI, Chart.js, D3.js, Tamil Nadu">
-  <meta name="author" content="Poovarasan J">
-  <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Poovarasan J - Software Developer Portfolio">
+    <meta property="og:description" content="Java, MERN stack, data analytics, and cybersecurity portfolio.">
+    <meta property="og:type" content="website">
 
-  <!-- Open Graph / Social Preview -->
-  <meta property="og:title" content="Poovarasan J | Java Developer & Data Analyst">
-  <meta property="og:description"
-    content="Portfolio showcasing full-stack web development and data analytics projects.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://poovarasanj2005.github.io/poovarasan-portfolio/">
+    <title>Poovarasan J - Software Developer Portfolio</title>
 
-  <!-- Google Search Console Verification (replace with your actual verification code) -->
-  <meta name="google-site-verification" content="REPLACE_WITH_YOUR_GOOGLE_SEARCH_CONSOLE_CODE">
-
-  <!-- Google Tag Manager -->
-  <script>(function (w, d, s, l, i) {
-      w[l] = w[l] || []; w[l].push({
-        'gtm.start':
-          new Date().getTime(), event: 'gtm.js'
-      }); var f = d.getElementsByTagName(s)[0],
-        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-    })(window, document, 'script', 'dataLayer', 'GTM-5ZWQPV7V');</script>
-  <!-- End Google Tag Manager -->
-
-  <!-- Google Analytics (GA4) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-REPLACE_WITH_YOUR_GA4_ID"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-REPLACE_WITH_YOUR_GA4_ID');
-  </script>
-  <!-- End Google Analytics -->
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@400;500;600&display=swap"
-    rel="stylesheet">
-
-  <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
 
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5ZWQPV7V" height="0" width="0"
-      style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
-
-  <!-- Visitor Counter Badge (top-right) -->
-  <div class="visitor-badge" id="visitor-badge" title="Visitors today">
-    <ion-icon name="eye-outline"></ion-icon>
-    <span id="visitor-count">...</span>
-  </div>
-
-  <main>
-
-    <aside class="sidebar" data-sidebar>
-
-      <div class="sidebar-info">
-
-        <figure class="avatar-box">
-          <img src="./poovarasan pic.png" alt="Poovarasan J" width="100" id="sidebar-avatar">
-        </figure>
-
-        <div id="profile-card-modal" class="profile-card-modal-container">
-          <div class="profile-card-overlay"></div>
-          <div class="pc-card-wrapper">
-            <section class="pc-card">
-              <div class="pc-inside">
-                <div class="pc-shine"></div>
-                <div class="pc-content pc-avatar-content">
-                  <img class="avatar" src="./poovarasan pic.png" alt="Poovarasan J" />
-                </div>
-              </div>
-            </section>
-          </div>
+    <div class="loading-screen">
+        <div class="loader">
+            <div class="loader-circle"></div>
+            <div class="loader-text">Loading Portfolio...</div>
         </div>
-
-        <div class="info-content">
-          <h1 class="name" title="Poovarasan J">Poovarasan J</h1>
-          <p class="title">Aspiring Java Developer &amp; Data Analyst</p>
-        </div>
-        <div><a href="J Poovarasan.pdf" target="_blank" class="resume-btn">
-            <ion-icon name="document-text-outline"></ion-icon>
-            <span>Download Resume</span>
-          </a></div>
-        <button class="info_more-btn" data-sidebar-btn>
-          <span>Show Contacts</span>
-          <ion-icon name="chevron-down"></ion-icon>
-        </button>
-
-      </div>
-
-      <div class="sidebar-info_more">
-
-        <div class="separator"></div>
-
-        <ul class="contacts-list">
-
-          <li class="contact-item">
-            <div class="icon-box">
-              <ion-icon name="mail-outline"></ion-icon>
-            </div>
-            <div class="contact-info">
-              <p class="contact-title">Email</p>
-              <a href="https://mail.google.com/mail/u/0/?fs=1&to=poovarasanpoovi20@gmail.com&su=Hello%20Poovarasan&body=I%20visited%20your%20portfolio!&tf=cm"
-                target="_blank" class="contact-link">poovarasanpoovi20@gmail.com</a>
-            </div>
-          </li>
-
-          <li class="contact-item">
-            <div class="icon-box">
-              <ion-icon name="logo-github"></ion-icon>
-            </div>
-            <div class="contact-info">
-              <p class="contact-title">GitHub</p>
-              <a href="https://github.com/poovarasanJ2005" class="contact-link" target="_blank">poovarasanJ2005</a>
-            </div>
-          </li>
-
-          <li class="contact-item">
-            <div class="icon-box">
-              <ion-icon name="logo-linkedin"></ion-icon>
-            </div>
-            <div class="contact-info">
-              <p class="contact-title">LinkedIn</p>
-              <a href="https://www.linkedin.com/in/poovarasan-j-516332256" class="contact-link"
-                target="_blank">Poovarasan J</a>
-            </div>
-          </li>
-
-          <li class="contact-item">
-            <div class="icon-box">
-              <ion-icon name="location-outline"></ion-icon>
-            </div>
-            <div class="contact-info">
-              <p class="contact-title">Location</p>
-              <address>S.S.Kottai, Tamil Nadu</address>
-            </div>
-          </li>
-
-        </ul>
-
-
-
-      </div>
-
-    </aside>
-
-    <div class="main-content">
-
-      <nav class="navbar">
-        <ul class="navbar-list">
-          <li class="navbar-item">
-            <button class="navbar-link active" data-nav-link>About</button>
-          </li>
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Resume</button>
-          </li>
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Portfolio</button>
-          </li>
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Contact</button>
-          </li>
-        </ul>
-      </nav>
-
-      <!-- ===== ABOUT PAGE ===== -->
-      <article class="about active" data-page="about">
-        <header>
-          <h2 class="h2 article-title">About Me</h2>
-        </header>
-
-        <div class="card-spotlight">
-          <section class="about-text">
-            <p>
-              I am passionate about technology, with a keen interest in computers and a commitment to staying updated
-              with the latest industry trends. I'm dedicated to improving my skills and expanding my knowledge
-              continuously.
-            </p>
-            <p>
-              Currently pursuing a BTech in Information Technology at PSNA College of Engineering and Technology, I
-              expect to graduate in 2026. My studies are providing me with the essential knowledge and practical skills
-              for a successful career in tech.
-            </p>
-            <p>
-              Outside of coding, I enjoy gaming and listening to music. I'm always eager to take on new challenges and
-              believe in the importance of lifelong learning.
-            </p>
-          </section>
-        </div>
-
-        <!-- Stats Row -->
-        <div class="stats-row">
-          <div class="stat-card card-spotlight">
-            <ion-icon name="trophy-outline"></ion-icon>
-            <span class="stat-num">7.93</span>
-            <span class="stat-label">CGPA</span>
-          </div>
-          <div class="stat-card card-spotlight">
-            <ion-icon name="code-slash-outline"></ion-icon>
-            <span class="stat-num">2+</span>
-            <span class="stat-label">Projects</span>
-          </div>
-          <div class="stat-card card-spotlight">
-            <ion-icon name="ribbon-outline"></ion-icon>
-            <span class="stat-num">8+</span>
-            <span class="stat-label">Certificates</span>
-          </div>
-          <div class="stat-card card-spotlight">
-            <ion-icon name="calendar-outline"></ion-icon>
-            <span class="stat-num">2026</span>
-            <span class="stat-label">Graduating</span>
-          </div>
-        </div>
-
-        <!-- What I Do / Services -->
-        <section class="service">
-          <h3 class="h3 service-title">What I Do</h3>
-          <ul class="service-list">
-            <li class="service-item">
-              <div class="service-icon-box">
-                <ion-icon name="globe-outline" style="font-size:28px; color:var(--orange-yellow-crayola)"></ion-icon>
-              </div>
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Full-Stack Web Dev</h4>
-                <p class="service-item-text">Building dynamic, responsive web apps using the MERN stack — MongoDB,
-                  Express.js, React, Node.js.</p>
-              </div>
-            </li>
-            <li class="service-item">
-              <div class="service-icon-box">
-                <ion-icon name="bar-chart-outline"
-                  style="font-size:28px; color:var(--orange-yellow-crayola)"></ion-icon>
-              </div>
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Data Analysis & Visualization</h4>
-                <p class="service-item-text">Turning raw data into actionable insights using Python, Power BI, Tableau,
-                  Chart.js, and D3.js.</p>
-              </div>
-            </li>
-            <li class="service-item">
-              <div class="service-icon-box">
-                <ion-icon name="server-outline" style="font-size:28px; color:var(--orange-yellow-crayola)"></ion-icon>
-              </div>
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Backend & Database</h4>
-                <p class="service-item-text">Designing REST APIs and scalable NoSQL databases with Node.js and MongoDB
-                  for production apps.</p>
-              </div>
-            </li>
-          </ul>
-        </section>
-
-      </article>
-
-      <!-- ===== RESUME PAGE ===== -->
-      <article class="resume" data-page="resume">
-
-        <header>
-          <h2 class="h2 article-title">Resume</h2>
-        </header>
-
-        <section class="timeline">
-          <div class="title-wrapper">
-            <div class="icon-box">
-              <ion-icon name="book-outline"></ion-icon>
-            </div>
-            <h3 class="h3">Education</h3>
-          </div>
-          <ol class="timeline-list">
-            <li class="timeline-item">
-              <h4 class="h4 timeline-item-title">PSNA College of Engineering and Technology</h4>
-              <span>2022 — 2026</span>
-              <p class="timeline-text">BTech in Information Technology &nbsp;|&nbsp; Current CGPA: <strong>7.93</strong>
-              </p>
-            </li>
-            <li class="timeline-item">
-              <h4 class="h4 timeline-item-title">GOVT.HR.SEC.SCHOOL — S.S.KOTTAI</h4>
-              <span>2021 — 2022</span>
-              <p class="timeline-text">Higher Secondary Certificate (HSC) — <strong>82.67%</strong></p>
-            </li>
-            <li class="timeline-item">
-              <h4 class="h4 timeline-item-title">GOVT.HR.SEC.SCHOOL — S.S.KOTTAI</h4>
-              <span>2019 — 2020</span>
-              <p class="timeline-text">Secondary School Leaving Certificate (SSLC) — <strong>71.4%</strong></p>
-            </li>
-          </ol>
-        </section>
-
-        <section class="timeline">
-          <div class="title-wrapper">
-            <div class="icon-box">
-              <ion-icon name="construct-outline"></ion-icon>
-            </div>
-            <h3 class="h3">Workshops</h3>
-          </div>
-          <ol class="timeline-list">
-            <li class="timeline-item">
-              <h4 class="h4 timeline-item-title">Open Day — IISC Bangalore</h4>
-              <span>Feb 2024</span>
-            </li>
-            <li class="timeline-item">
-              <h4 class="h4 timeline-item-title">Meta Gen AI Workshop (Online)</h4>
-              <span>Sep 2024</span>
-            </li>
-          </ol>
-        </section>
-
-        <section class="timeline">
-          <div class="title-wrapper">
-            <div class="icon-box">
-              <ion-icon name="ribbon-outline"></ion-icon>
-            </div>
-            <h3 class="h3">Certifications</h3>
-          </div>
-
-          <ol class="timeline-list">
-            <li class="timeline-item" data-certificate>
-              <a href="CertificateOfCompletion_Career Essentials in Data Analysis by Microsoft and LinkedIn.pdf"
-                target="_blank">
-                <h4 class="h4 timeline-item-title">Career Essentials in Data Analysis – Microsoft &amp; LinkedIn</h4>
-              </a>
-              <span>August 21, 2025</span>
-              <div class="certificate-preview">
-                <iframe src="CertificateOfCompletion_Career Essentials in Data Analysis by Microsoft and LinkedIn.pdf"
-                  width="350" height="250"></iframe>
-              </div>
-            </li>
-
-            <li class="timeline-item" data-certificate>
-              <a href="ms excel certificate.pdf" target="_blank">
-                <h4 class="h4 timeline-item-title">Introduction to MS Excel – Simplilearn</h4>
-              </a>
-              <span>August 17, 2025</span>
-              <div class="certificate-preview">
-                <iframe src="ms excel certificate.pdf" width="350" height="250"></iframe>
-              </div>
-            </li>
-
-            <li class="timeline-item" data-certificate>
-              <a href="learn sql on codechef.pdf" target="_blank">
-                <h4 class="h4 timeline-item-title">Learn SQL – CodeChef</h4>
-              </a>
-              <span>August 8, 2025</span>
-              <div class="certificate-preview">
-                <iframe src="learn sql on codechef.pdf" width="350" height="250"></iframe>
-              </div>
-            </li>
-
-            <li class="timeline-item" data-certificate>
-              <a href="power bi.pdf" target="_blank">
-                <h4 class="h4 timeline-item-title">Power BI for Beginners – Simplilearn</h4>
-              </a>
-              <span>August 3, 2025</span>
-              <div class="certificate-preview">
-                <iframe src="power bi.pdf" width="350" height="250"></iframe>
-              </div>
-            </li>
-
-            <li class="timeline-item" data-certificate>
-              <a href="poovarasan_20-Learn Java.pdf" target="_blank">
-                <h4 class="h4 timeline-item-title">Learn Java – CodeChef</h4>
-              </a>
-              <span>June 27, 2025</span>
-              <div class="certificate-preview">
-                <iframe src="poovarasan_20-Learn Java.pdf" width="350" height="250"></iframe>
-              </div>
-            </li>
-
-            <li class="timeline-item" data-certificate>
-              <a href="udemy.jpg" target="_blank">
-                <h4 class="h4 timeline-item-title">Master JavaScript, HTML, &amp; CSS – Udemy</h4>
-              </a>
-              <span>May 13, 2025</span>
-              <div class="certificate-preview">
-                <iframe src="udemy.jpg" width="350" height="250"></iframe>
-              </div>
-            </li>
-
-            <li class="timeline-item" data-certificate>
-              <a href="Poovarasan J MongoDB Certification.pdf" target="_blank">
-                <h4 class="h4 timeline-item-title">MongoDB Developer Path – MongoDB</h4>
-              </a>
-              <span>December 7, 2024</span>
-              <div class="certificate-preview">
-                <iframe src="Poovarasan J MongoDB Certification.pdf" width="350" height="250"></iframe>
-              </div>
-            </li>
-
-            <li class="timeline-item" data-certificate>
-              <a href="ui ux certificate.pdf" target="_blank">
-                <h4 class="h4 timeline-item-title">Principles of UX/UI Design – Meta &amp; Coursera</h4>
-              </a>
-              <span>October 1, 2024</span>
-              <div class="certificate-preview">
-                <iframe src="ui ux certificate.pdf" width="350" height="250"></iframe>
-              </div>
-            </li>
-          </ol>
-        </section>
-
-        <!-- Modal for viewing certificate in large size -->
-        <div id="certificateModal" class="certificate-modal">
-          <div class="certificate-overlay"></div>
-          <div class="certificate-modal-content">
-            <span class="certificate-close">&times;</span>
-            <img id="modalImage" src="" alt="Certificate Preview">
-          </div>
-        </div>
-
-        <section class="skill">
-          <h3 class="h3 skills-title">My Skills</h3>
-          <ul class="skills-list content-card">
-            <li class="skills-item">
-              <h5 class="h5">Java</h5>
-            </li>
-            <li class="skills-item">
-              <h5 class="h5">Frontend (HTML, CSS, JavaScript)</h5>
-            </li>
-            <li class="skills-item">
-              <h5 class="h5">Backend (Node.js, Express.js)</h5>
-            </li>
-            <li class="skills-item">
-              <h5 class="h5">Database (MongoDB)</h5>
-            </li>
-            <li class="skills-item">
-              <h5 class="h5">Data Visualization (Power BI, Tableau, Chart.js, D3.js)</h5>
-            </li>
-            <li class="skills-item">
-              <h5 class="h5">MERN Stack</h5>
-            </li>
-          </ul>
-        </section>
-
-      </article>
-
-      <!-- ===== PORTFOLIO PAGE ===== -->
-      <article class="portfolio" data-page="portfolio">
-
-        <header>
-          <h2 class="h2 article-title">Portfolio</h2>
-        </header>
-
-        <section>
-
-          <ul class="filter-list">
-            <li class="filter-item">
-              <button class="active" data-filter-btn>All</button>
-            </li>
-            <li class="filter-item">
-              <button data-filter-btn>Web Development</button>
-            </li>
-            <li class="filter-item">
-              <button data-filter-btn>Data Analysis</button>
-            </li>
-          </ul>
-
-          <div class="filter-select-box">
-            <button class="filter-select" data-select>
-              <div class="select-value" data-selecct-value>Select category</div>
-              <div class="select-icon">
-                <ion-icon name="chevron-down"></ion-icon>
-              </div>
-            </button>
-            <ul class="select-list">
-              <li class="select-item"><button data-select-item>All</button></li>
-              <li class="select-item"><button data-select-item>Web Development</button></li>
-              <li class="select-item"><button data-select-item>Data Analysis</button></li>
-            </ul>
-          </div>
-
-          <ul class="project-list">
-
-            <!-- Project 1: College Placement Website -->
-            <li class="project-item active" data-filter-item data-category="web development">
-              <div class="card-spotlight project-card-enhanced">
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-                  <img src="./placement_project.png" alt="College Placement Website Dashboard" loading="lazy">
-                  <div class="project-overlay">
-                    <a href="https://github.com/poovarasanJ2005" target="_blank" class="project-overlay-btn">
-                      <ion-icon name="logo-github"></ion-icon> View on GitHub
-                    </a>
-                  </div>
-                </figure>
-
-                <div class="project-info">
-                  <div class="project-header">
-                    <span class="project-tag web-tag">Web Development</span>
-                    <span class="project-status status-complete">Completed</span>
-                  </div>
-                  <h3 class="project-title">College Placement Website</h3>
-                  <p class="project-desc">A full-stack platform for managing campus placements — student profiles,
-                    company listings, job applications, and real-time analytics dashboard for placement officers.</p>
-                  <div class="tech-badges">
-                    <span class="tech-badge html-badge">HTML</span>
-                    <span class="tech-badge css-badge">CSS</span>
-                    <span class="tech-badge js-badge">JavaScript</span>
-                    <span class="tech-badge node-badge">Node.js</span>
-                    <span class="tech-badge mongo-badge">MongoDB</span>
-                  </div>
-                  <div class="project-links">
-                    <a href="https://github.com/poovarasanJ2005" target="_blank" class="project-link-btn">
-                      <ion-icon name="logo-github"></ion-icon> GitHub
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </li>
-
-            <!-- Project 2: Sparkly Data -->
-            <li class="project-item active" data-filter-item data-category="data analysis">
-              <div class="card-spotlight project-card-enhanced">
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-                  <img src="./sparkly_data_project.png" alt="Sparkly Data Analytics Dashboard" loading="lazy">
-                  <div class="project-overlay">
-                    <a href="https://github.com/poovarasanJ2005" target="_blank" class="project-overlay-btn">
-                      <ion-icon name="logo-github"></ion-icon> View on GitHub
-                    </a>
-                  </div>
-                </figure>
-
-                <div class="project-info">
-                  <div class="project-header">
-                    <span class="project-tag data-tag">Data Analysis</span>
-                    <span class="project-status status-progress">In Progress</span>
-                  </div>
-                  <h3 class="project-title">Sparkly Data</h3>
-                  <p class="project-desc">An interactive data analytics platform built on the MERN stack — featuring
-                    real-time charts, D3.js visualizations, Power BI integration, and a dynamic dashboard for insightful
-                    data storytelling.</p>
-                  <div class="tech-badges">
-                    <span class="tech-badge mongo-badge">MongoDB</span>
-                    <span class="tech-badge js-badge">Express.js</span>
-                    <span class="tech-badge react-badge">React</span>
-                    <span class="tech-badge node-badge">Node.js</span>
-                    <span class="tech-badge chart-badge">Chart.js</span>
-                    <span class="tech-badge d3-badge">D3.js</span>
-                    <span class="tech-badge bi-badge">Power BI</span>
-                  </div>
-                  <div class="project-links">
-                    <a href="https://github.com/poovarasanJ2005" target="_blank" class="project-link-btn">
-                      <ion-icon name="logo-github"></ion-icon> GitHub
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </li>
-
-          </ul>
-
-        </section>
-
-      </article>
-
-      <!-- ===== CONTACT PAGE ===== -->
-      <article class="contact" data-page="contact">
-
-        <header>
-          <h2 class="h2 article-title">Contact</h2>
-        </header>
-
-        <section class="contact-form">
-          <h3 class="h3 form-title">Contact Form</h3>
-          <form action="https://formsubmit.co/poovarasanpoovi20@gmail.com" method="POST" class="form" data-form>
-            <div class="input-wrapper">
-              <input type="text" name="fullname" id="contact-name" class="form-input" placeholder="Full name" required
-                data-form-input>
-              <input type="email" name="email" id="contact-email" class="form-input" placeholder="Email address"
-                required data-form-input>
-            </div>
-            <textarea name="message" id="contact-message" class="form-input" placeholder="Your Message" required
-              data-form-input></textarea>
-            <button class="form-btn" id="contact-submit" type="submit" disabled data-form-btn>
-              <ion-icon name="paper-plane"></ion-icon>
-              <span>Send Message</span>
-            </button>
-          </form>
-        </section>
-
-      </article>
-
     </div>
 
-  </main>
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo" aria-label="Poovarasan J home">
+                <span class="logo-text">Poovarasan<span class="gradient-text">.dev</span></span>
+            </a>
 
-  <script src="./script.js"></script>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#achievements" class="nav-link">Certifications</a></li>
+                <li><a href="#resume" class="nav-link">Resume</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
 
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
 
+    <main>
+        <section class="hero" id="home">
+            <div class="particles" id="particles"></div>
+            <div class="hero-container">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <i class="fas fa-briefcase"></i>
+                        <span>Available for internships and full-time roles</span>
+                    </div>
+                    <h1 class="hero-title">
+                        Building software, data stories, and
+                        <span class="gradient-text typing-text">secure digital systems</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        B.Tech IT student and versatile software developer with hands-on work in
+                        <span class="highlight">Java</span>,
+                        <span class="highlight">MERN stack development</span>,
+                        <span class="highlight">data analytics</span>, and foundational
+                        <span class="highlight">cybersecurity</span>.
+                    </p>
+                    <div class="hero-cta">
+                        <a href="#projects" class="btn btn-primary">
+                            <span>View Projects</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="Poovarasan_J_Cyber_Resume.pdf" class="btn btn-secondary" download>
+                            <i class="fas fa-download"></i>
+                            <span>Download Resume</span>
+                        </a>
+                    </div>
+                    <div class="hero-social">
+                        <a href="mailto:poovarasanpoovi20@gmail.com" class="social-link" aria-label="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/poovarasan-j-516332256/" target="_blank"
+                            rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/PoovarasanJ2005" target="_blank" rel="noopener noreferrer"
+                            class="social-link" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://leetcode.com/u/TNTBaBHoXO/" target="_blank" rel="noopener noreferrer"
+                            class="social-link" aria-label="LeetCode">
+                            <i class="fas fa-code"></i>
+                        </a>
+                        <a href="tel:+916382919022" class="social-link" aria-label="Phone">
+                            <i class="fas fa-phone"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="avatar-container">
+                        <div class="avatar-glow"></div>
+
+                        <div class="photo-glass-card">
+                            <div class="glass-card-inner">
+                                <div class="photo-wrapper">
+                                    <img src="- Poovarasan.png" alt="Poovarasan J" class="profile-photo">
+                                    <div class="photo-overlay">
+                                        <div class="overlay-text">
+                                            <i class="fas fa-user-circle"></i>
+                                            <p>Poovarasan J</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="glass-shine"></div>
+                            </div>
+                        </div>
+
+                        <div class="floating-icons" aria-hidden="true">
+                            <span class="float-icon" style="--delay: 0s;"><i class="fab fa-java"></i></span>
+                            <span class="float-icon" style="--delay: 0.5s;"><i class="fab fa-react"></i></span>
+                            <span class="float-icon" style="--delay: 1s;"><i class="fab fa-node-js"></i></span>
+                            <span class="float-icon" style="--delay: 1.5s;"><i class="fas fa-database"></i></span>
+                            <span class="float-icon" style="--delay: 2s;"><i class="fas fa-shield-alt"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <a href="#about" class="scroll-indicator" aria-label="Scroll to about section">
+                <div class="mouse">
+                    <div class="wheel"></div>
+                </div>
+                <span>Scroll to explore</span>
+            </a>
+        </section>
+
+        <section class="about" id="about">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Get to know me</span>
+                    <h2 class="section-title">About Me</h2>
+                </div>
+
+                <div class="about-content">
+                    <div class="about-text">
+                        <p class="about-intro">
+                            Hi! I am <span class="gradient-text">Poovarasan J</span>, a B.Tech Information Technology
+                            student at PSNA College of Engineering and Technology with a current <strong>CGPA of
+                                8.0</strong>.
+                        </p>
+                        <p>
+                            I am passionate about technology, with a keen interest in computers and a commitment to
+                            staying updated with the latest industry trends. I keep improving my skills across software
+                            development, data analytics, UI/UX, automation, and cybersecurity fundamentals.
+                        </p>
+                        <p>
+                            My studies and projects have helped me build full-stack platforms, organize data workflows,
+                            create dashboards, and design cleaner user experiences for real-world use cases.
+                        </p>
+                        <p>
+                            Outside of coding, I enjoy gaming and listening to music. I am always eager to take on new
+                            challenges and believe in continuous learning.
+                        </p>
+
+                        <div class="about-highlights">
+                            <div class="highlight-item">
+                                <i class="fas fa-graduation-cap"></i>
+                                <div>
+                                    <h4>Education</h4>
+                                    <p>B.Tech IT, 2022 - 2026</p>
+                                </div>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div>
+                                    <h4>Location</h4>
+                                    <p>S.S.Kottai, Tamil Nadu</p>
+                                </div>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-lightbulb"></i>
+                                <div>
+                                    <h4>Interests</h4>
+                                    <p>Web Dev, Data Analytics, AI, Cybersecurity</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="about-stats">
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-project-diagram"></i>
+                            </div>
+                            <h3 class="stat-number" data-target="2">0</h3>
+                            <p class="stat-label">Featured Projects</p>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-certificate"></i>
+                            </div>
+                            <h3 class="stat-number" data-target="11">0</h3>
+                            <p class="stat-label">Certifications</p>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <h3 class="stat-number" data-target="12">0</h3>
+                            <p class="stat-label">Technologies</p>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <h3 class="stat-number" data-target="1">0</h3>
+                            <p class="stat-label">Internship</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="services" aria-labelledby="what-i-do-title">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">What I do</span>
+                    <h2 class="section-title" id="what-i-do-title">Focused Capabilities</h2>
+                </div>
+
+                <div class="service-grid">
+                    <article class="service-card">
+                        <i class="fas fa-layer-group"></i>
+                        <h3>Full-Stack Web Development</h3>
+                        <p>Building responsive MERN stack applications with role-based access, dashboards, and
+                            practical workflows.</p>
+                    </article>
+                    <article class="service-card">
+                        <i class="fas fa-chart-pie"></i>
+                        <h3>Data Analysis &amp; Visualization</h3>
+                        <p>Turning raw datasets into reports, charts, and dashboards using Power BI, Tableau, Chart.js,
+                            and D3.js.</p>
+                    </article>
+                    <article class="service-card">
+                        <i class="fas fa-shield-halved"></i>
+                        <h3>Cybersecurity Fundamentals</h3>
+                        <p>Applying cloud security, network security, and cryptography fundamentals while growing secure
+                            software practices.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="skills" id="skills">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">My expertise</span>
+                    <h2 class="section-title">Skills &amp; Technologies</h2>
+                </div>
+
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <div class="category-header">
+                            <i class="fas fa-code"></i>
+                            <h3>Programming &amp; Languages</h3>
+                        </div>
+                        <div class="skill-items">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Java</span>
+                                    <span class="skill-percent">85%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="--progress: 85%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">SQL</span>
+                                    <span class="skill-percent">78%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="--progress: 78%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <div class="category-header">
+                            <i class="fas fa-palette"></i>
+                            <h3>Frontend Development</h3>
+                        </div>
+                        <div class="skill-items">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">HTML</span>
+                                    <span class="skill-percent">90%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="--progress: 90%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">CSS</span>
+                                    <span class="skill-percent">85%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="--progress: 85%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">JavaScript</span>
+                                    <span class="skill-percent">80%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="--progress: 80%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">React</span>
+                                    <span class="skill-percent">76%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="--progress: 76%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <div class="category-header">
+                            <i class="fab fa-node-js"></i>
+                            <h3>Backend &amp; Database</h3>
+                        </div>
+                        <div class="skill-items">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Node.js / Express.js</span>
+                                    <span class="skill-percent">75%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="--progress: 75%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">MongoDB</span>
+                                    <span class="skill-percent">80%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="--progress: 80%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <div class="category-header">
+                            <i class="fas fa-chart-bar"></i>
+                            <h3>Data &amp; Visualization</h3>
+                        </div>
+                        <div class="skill-items">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Power BI</span>
+                                    <span class="skill-percent">75%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="--progress: 75%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Tableau</span>
+                                    <span class="skill-percent">70%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="--progress: 70%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Chart.js / D3.js</span>
+                                    <span class="skill-percent">72%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="--progress: 72%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <div class="category-header">
+                            <i class="fas fa-shield-alt"></i>
+                            <h3>Cybersecurity</h3>
+                        </div>
+                        <div class="soft-skills">
+                            <span class="soft-skill-tag">Cloud Security</span>
+                            <span class="soft-skill-tag">Network Security Fundamentals</span>
+                            <span class="soft-skill-tag">Cryptography</span>
+                            <span class="soft-skill-tag">Secure System Awareness</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <div class="category-header">
+                            <i class="fas fa-wand-magic-sparkles"></i>
+                            <h3>Tools &amp; Soft Skills</h3>
+                        </div>
+                        <div class="soft-skills">
+                            <span class="soft-skill-tag">Figma</span>
+                            <span class="soft-skill-tag">n8n</span>
+                            <span class="soft-skill-tag">Problem Solving</span>
+                            <span class="soft-skill-tag">Teamwork</span>
+                            <span class="soft-skill-tag">Communication</span>
+                            <span class="soft-skill-tag">Time Management</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="projects" id="projects">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">What I have built</span>
+                    <h2 class="section-title">Featured Projects</h2>
+                </div>
+
+                <div class="project-filter" aria-label="Filter projects">
+                    <button class="filter-btn active" data-filter="all">All Projects</button>
+                    <button class="filter-btn" data-filter="web">Web Development</button>
+                    <button class="filter-btn" data-filter="data">Data Analytics</button>
+                    <button class="filter-btn" data-filter="fullstack">Full Stack</button>
+                </div>
+
+                <div class="projects-grid">
+                    <article class="project-card" data-category="web fullstack">
+                        <div class="project-image project-placement">
+                            <div class="project-overlay">
+                                <button class="btn-view-project" data-project="placement">
+                                    <i class="fas fa-eye"></i>
+                                    <span>View Details</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-tags">
+                                <span class="tag">Full Stack</span>
+                                <span class="tag">MERN</span>
+                                <span class="tag">Completed</span>
+                            </div>
+                            <h3 class="project-title">College Placement Website</h3>
+                            <p class="project-description">
+                                A full-stack platform for managing campus placements with student profiles, company
+                                listings, resume uploads, applications, and real-time tracking.
+                            </p>
+                            <div class="project-tech">
+                                <span><i class="fab fa-react"></i> React</span>
+                                <span><i class="fab fa-node-js"></i> Node.js</span>
+                                <span><i class="fas fa-database"></i> MongoDB</span>
+                                <span><i class="fab fa-js"></i> Express.js</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card" data-category="data fullstack">
+                        <div class="project-image project-sparkly">
+                            <div class="project-overlay">
+                                <button class="btn-view-project" data-project="sparkly">
+                                    <i class="fas fa-eye"></i>
+                                    <span>View Details</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-tags">
+                                <span class="tag">Data Analytics</span>
+                                <span class="tag">Visualization</span>
+                                <span class="tag">In Progress</span>
+                            </div>
+                            <h3 class="project-title">Sparkly Data</h3>
+                            <p class="project-description">
+                                An interactive analytics platform for dataset upload, preprocessing, statistical
+                                analysis, and dashboard-based data storytelling.
+                            </p>
+                            <div class="project-tech">
+                                <span><i class="fas fa-chart-pie"></i> Power BI</span>
+                                <span><i class="fas fa-chart-area"></i> Tableau</span>
+                                <span><i class="fas fa-chart-line"></i> Chart.js</span>
+                                <span><i class="fas fa-project-diagram"></i> D3.js</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <div class="modal" id="projectModal" aria-hidden="true" role="dialog" aria-labelledby="modalTitle">
+            <div class="modal-overlay"></div>
+            <div class="modal-content">
+                <button class="modal-close" id="modalClose" aria-label="Close project details">
+                    <i class="fas fa-times"></i>
+                </button>
+                <div class="modal-body" id="modalBody"></div>
+            </div>
+        </div>
+
+        <section class="experience" id="experience">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">My journey</span>
+                    <h2 class="section-title">Experience &amp; Timeline</h2>
+                </div>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">June 2025 - July 2025</div>
+                            <h3 class="timeline-title">Data Analyst Intern</h3>
+                            <h4 class="timeline-company">Winways Technology Pvt Ltd - Madurai</h4>
+                            <p class="timeline-description">
+                                Engineered automated data cleaning and preprocessing pipelines for complex client
+                                datasets, then developed interactive dashboards and client reports with senior analysts.
+                            </p>
+                            <div class="timeline-skills">
+                                <span>Power BI</span>
+                                <span>SQL</span>
+                                <span>Data Cleaning</span>
+                                <span>Visualization</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">September 2024</div>
+                            <h3 class="timeline-title">Meta Gen AI Workshop</h3>
+                            <h4 class="timeline-company">Online Workshop</h4>
+                            <p class="timeline-description">
+                                Participated in a generative AI workshop covering large language models, prompt
+                                engineering, and practical AI use cases.
+                            </p>
+                            <div class="timeline-skills">
+                                <span>Generative AI</span>
+                                <span>LLMs</span>
+                                <span>Prompt Engineering</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">February 2024</div>
+                            <h3 class="timeline-title">Open Day at IISc Bangalore</h3>
+                            <h4 class="timeline-company">Indian Institute of Science</h4>
+                            <p class="timeline-description">
+                                Attended IISc Bangalore Open Day and explored research work in computer science, AI, and
+                                engineering.
+                            </p>
+                            <div class="timeline-skills">
+                                <span>Research Exposure</span>
+                                <span>Networking</span>
+                                <span>Innovation</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">2022 - 2026</div>
+                            <h3 class="timeline-title">B.Tech - Information Technology</h3>
+                            <h4 class="timeline-company">PSNA College of Engineering and Technology</h4>
+                            <p class="timeline-description">
+                                Pursuing Bachelor of Technology in Information Technology with a current CGPA of 8.0.
+                            </p>
+                            <div class="timeline-skills">
+                                <span>CGPA: 8.0</span>
+                                <span>Expected Graduation: 2026</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">2021 - 2022</div>
+                            <h3 class="timeline-title">Higher Secondary Certificate (HSC)</h3>
+                            <h4 class="timeline-company">GOVT. HR. SEC. SCHOOL - S.S.KOTTAI</h4>
+                            <p class="timeline-description">
+                                Completed Higher Secondary Certificate with a score of 82.67%.
+                            </p>
+                            <div class="timeline-skills">
+                                <span>Score: 82.67%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">2019 - 2020</div>
+                            <h3 class="timeline-title">Secondary School Leaving Certificate (SSLC)</h3>
+                            <h4 class="timeline-company">GOVT. HR. SEC. SCHOOL - S.S.KOTTAI</h4>
+                            <p class="timeline-description">
+                                Completed Secondary School Leaving Certificate with a score of 71.4%.
+                            </p>
+                            <div class="timeline-skills">
+                                <span>Score: 71.4%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="achievements" id="achievements">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Recognition</span>
+                    <h2 class="section-title">Certifications</h2>
+                </div>
+
+                <div class="achievements-grid">
+                    <article class="achievement-card featured-cert">
+                        <div class="achievement-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Introduction to Cyber Security</h3>
+                        <p class="achievement-issuer">Infosys Springboard</p>
+                        <p class="achievement-date">May 30, 2026</p>
+                        <a href="Infosys%20-cyber%20security%20certificate.pdf" target="_blank"
+                            rel="noopener noreferrer" class="certificate-link">View Certificate</a>
+                    </article>
+
+                    <article class="achievement-card featured-cert">
+                        <div class="achievement-icon">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <h3>Cloud Security Fundamentals</h3>
+                        <p class="achievement-issuer">Palo Alto Networks Cybersecurity Academy</p>
+                        <p class="achievement-date">February 5, 2025</p>
+                        <a href="Palo%20alto%20-Cloud_Security_Fundamentals_Student_Certificate.pdf" target="_blank"
+                            rel="noopener noreferrer" class="certificate-link">View Certificate</a>
+                    </article>
+
+                    <article class="achievement-card featured-cert">
+                        <div class="achievement-icon">
+                            <i class="fas fa-key"></i>
+                        </div>
+                        <h3>Introduction to Cryptography for Beginners</h3>
+                        <p class="achievement-issuer">Simplilearn</p>
+                        <p class="achievement-date">November 3, 2025</p>
+                        <a href="Poovarasan_cryptography.pdf" target="_blank" rel="noopener noreferrer"
+                            class="certificate-link">View Certificate</a>
+                    </article>
+
+                    <article class="achievement-card">
+                        <div class="achievement-icon">
+                            <i class="fab fa-microsoft"></i>
+                        </div>
+                        <h3>Career Essentials in Data Analysis</h3>
+                        <p class="achievement-issuer">Microsoft &amp; LinkedIn</p>
+                        <p class="achievement-date">August 21, 2025</p>
+                        <a href="CertificateOfCompletion_Career%20Essentials%20in%20Data%20Analysis%20by%20Microsoft%20and%20LinkedIn.pdf"
+                            target="_blank" rel="noopener noreferrer" class="certificate-link">View Certificate</a>
+                    </article>
+
+                    <article class="achievement-card">
+                        <div class="achievement-icon">
+                            <i class="fas fa-file-excel"></i>
+                        </div>
+                        <h3>Introduction to MS Excel</h3>
+                        <p class="achievement-issuer">Simplilearn</p>
+                        <p class="achievement-date">August 17, 2025</p>
+                        <a href="ms%20excel%20certificate.pdf" target="_blank" rel="noopener noreferrer"
+                            class="certificate-link">View Certificate</a>
+                    </article>
+
+                    <article class="achievement-card">
+                        <div class="achievement-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h3>Learn SQL</h3>
+                        <p class="achievement-issuer">CodeChef</p>
+                        <p class="achievement-date">August 8, 2025</p>
+                        <a href="learn%20sql%20on%20codechef.pdf" target="_blank" rel="noopener noreferrer"
+                            class="certificate-link">View Certificate</a>
+                    </article>
+
+                    <article class="achievement-card">
+                        <div class="achievement-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Power BI for Beginners</h3>
+                        <p class="achievement-issuer">Simplilearn</p>
+                        <p class="achievement-date">August 3, 2025</p>
+                        <a href="power%20bi.pdf" target="_blank" rel="noopener noreferrer"
+                            class="certificate-link">View Certificate</a>
+                    </article>
+
+                    <article class="achievement-card">
+                        <div class="achievement-icon">
+                            <i class="fab fa-java"></i>
+                        </div>
+                        <h3>Learn Java</h3>
+                        <p class="achievement-issuer">CodeChef</p>
+                        <p class="achievement-date">June 27, 2025</p>
+                        <a href="poovarasan_20-Learn%20Java.pdf" target="_blank" rel="noopener noreferrer"
+                            class="certificate-link">View Certificate</a>
+                    </article>
+
+                    <article class="achievement-card">
+                        <div class="achievement-icon">
+                            <i class="fab fa-html5"></i>
+                        </div>
+                        <h3>Master JavaScript, HTML, &amp; CSS</h3>
+                        <p class="achievement-issuer">Udemy</p>
+                        <p class="achievement-date">May 13, 2025</p>
+                        <a href="udemy.jpg" target="_blank" rel="noopener noreferrer" class="certificate-link">View
+                            Certificate</a>
+                    </article>
+
+                    <article class="achievement-card">
+                        <div class="achievement-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h3>MongoDB Developer Path</h3>
+                        <p class="achievement-issuer">MongoDB</p>
+                        <p class="achievement-date">December 7, 2024</p>
+                        <span class="certificate-link certificate-link-muted">Listed on Resume</span>
+                    </article>
+
+                    <article class="achievement-card">
+                        <div class="achievement-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <h3>Principles of UX/UI Design</h3>
+                        <p class="achievement-issuer">Meta &amp; Coursera</p>
+                        <p class="achievement-date">October 1, 2024</p>
+                        <a href="ui%20ux%20certificate.pdf" target="_blank" rel="noopener noreferrer"
+                            class="certificate-link">View Certificate</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="resume-section" id="resume">
+            <div class="container">
+                <div class="resume-card">
+                    <div class="resume-content">
+                        <div class="resume-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <div class="resume-text">
+                            <h2>Download My Updated Resume</h2>
+                            <p>Cyber-focused resume covering software development, data analytics, projects,
+                                internship, and certifications.</p>
+                            <ul class="resume-highlights">
+                                <li><i class="fas fa-check"></i> Java, SQL, MERN stack, and MongoDB</li>
+                                <li><i class="fas fa-check"></i> Data analytics with Power BI and Tableau</li>
+                                <li><i class="fas fa-check"></i> Cybersecurity, cloud security, and cryptography</li>
+                                <li><i class="fas fa-check"></i> Winways Technology data analyst internship</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="resume-action">
+                        <a href="Poovarasan_J_Cyber_Resume.pdf" class="btn btn-primary btn-large" download>
+                            <i class="fas fa-download"></i>
+                            <span>Download Resume</span>
+                        </a>
+                        <p class="resume-note">PDF Format - Last Updated: May 30, 2026</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact" id="contact">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Get in touch</span>
+                    <h2 class="section-title">Let's Work Together</h2>
+                    <p class="section-subtitle">
+                        I am open to internships, entry-level software roles, data analyst opportunities, and
+                        collaborative projects.
+                    </p>
+                </div>
+
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Email</h4>
+                                <a href="mailto:poovarasanpoovi20@gmail.com">poovarasanpoovi20@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Phone</h4>
+                                <a href="tel:+916382919022">+91 6382919022</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Location</h4>
+                                <p>S.S.Kottai, Sivagangai, Tamil Nadu, India</p>
+                            </div>
+                        </div>
+                        <div class="contact-social">
+                            <h4>Connect with me</h4>
+                            <div class="social-links">
+                                <a href="https://www.linkedin.com/in/poovarasan-j-516332256/" target="_blank"
+                                    rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="https://github.com/PoovarasanJ2005" target="_blank" rel="noopener noreferrer"
+                                    class="social-btn" aria-label="GitHub">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="https://leetcode.com/u/TNTBaBHoXO/" target="_blank" rel="noopener noreferrer"
+                                    class="social-btn" aria-label="LeetCode">
+                                    <i class="fas fa-code"></i>
+                                </a>
+                                <a href="mailto:poovarasanpoovi20@gmail.com" class="social-btn" aria-label="Email">
+                                    <i class="fas fa-envelope"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" required placeholder="John Doe">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" name="email" required placeholder="john@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required placeholder="Project Discussion">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required
+                                placeholder="Tell me about your project..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-large">
+                            <span>Send Message</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-quote">
+                    <i class="fas fa-quote-left"></i>
+                    <p>"The best way to predict the future is to invent it."</p>
+                    <span>- Alan Kay</span>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2026 Poovarasan J. Crafted with code and focus.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 
 </html>

@@ -1,224 +1,308 @@
-'use strict';
-
-// Utility: Add/remove .active on an element
-const elementToggleFunc = function (elem) { elem.classList.toggle("active"); }
-
-// Sidebar toggle functionality for mobile
-const sidebar = document.querySelector("[data-sidebar]");
-const sidebarBtn = document.querySelector("[data-sidebar-btn]");
-sidebarBtn.addEventListener("click", function () { elementToggleFunc(sidebar); });
-
-
-// Portfolio filter functionality (for both mobile select and desktop buttons)
-const filterBtns = document.querySelectorAll("[data-filter-btn]");
-const filterSelect = document.querySelector("[data-select]");
-const filterSelectItems = document.querySelectorAll("[data-select-item]");
-const selectValue = document.querySelector("[data-selecct-value]");
-const filterItems = document.querySelectorAll("[data-filter-item]");
-
-let lastClickedBtn = filterBtns[0];
-
-const filterFunc = function (selectedValue) {
-  for (let i = 0; i < filterItems.length; i++) {
-    if (selectedValue.toLowerCase() === "all" || selectedValue.toLowerCase() === filterItems[i].dataset.category.toLowerCase()) {
-      filterItems[i].classList.add("active");
-    } else {
-      filterItems[i].classList.remove("active");
+const projectDetails = {
+    placement: {
+        title: "College Placement Website",
+        summary:
+            "A full-stack campus placement platform for student profiles, recruiter access, company listings, resume uploads, job applications, and real-time application tracking.",
+        stack: ["React", "Node.js", "Express.js", "MongoDB", "HTML", "CSS", "JavaScript"],
+        points: [
+            "Built secure role-based access for students, recruiters, and placement officers.",
+            "Centralized resume management, application records, and placement workflow data in MongoDB.",
+            "Designed dashboard views to help placement teams track students, companies, and application status."
+        ]
+    },
+    sparkly: {
+        title: "Sparkly Data",
+        summary:
+            "An end-to-end data analytics platform for dataset upload, preprocessing, statistical analysis, and interactive visualization dashboards.",
+        stack: ["MERN Stack", "Chart.js", "D3.js", "Power BI", "Tableau"],
+        points: [
+            "Created a workflow for uploading, cleaning, and preparing datasets for analysis.",
+            "Integrated chart-driven storytelling with Chart.js and D3.js for interactive frontend visuals.",
+            "Used Power BI and Tableau concepts to support richer dashboard and reporting outcomes."
+        ]
     }
-  }
+};
+
+const qs = (selector, parent = document) => parent.querySelector(selector);
+const qsa = (selector, parent = document) => [...parent.querySelectorAll(selector)];
+
+function initLoader() {
+    const loader = qs(".loading-screen");
+    const hide = () => loader?.classList.add("hidden");
+    window.addEventListener("load", () => setTimeout(hide, 350));
+    setTimeout(hide, 1200);
 }
 
-// Desktop filter button handler
-filterBtns.forEach(btn => {
-    btn.addEventListener("click", function () {
-        let selectedValue = this.innerText;
-        selectValue.innerText = this.innerText;
-        filterFunc(selectedValue);
-        lastClickedBtn.classList.remove("active");
-        this.classList.add("active");
-        lastClickedBtn = this;
-    });
-});
+function initTheme() {
+    const toggle = qs("#themeToggle");
+    const icon = toggle?.querySelector("i");
+    const savedTheme = localStorage.getItem("portfolio-theme");
 
-// Mobile select box handler
-if (filterSelect) {
-  filterSelect.addEventListener("click", function () {
-    elementToggleFunc(this);
-  });
-
-  filterSelectItems.forEach(item => {
-      item.addEventListener("click", function () {
-          let selectedValue = this.innerText;
-          selectValue.innerText = this.innerText;
-          filterFunc(selectedValue);
-          elementToggleFunc(filterSelect);
-      });
-  });
-}
-
-
-// Contact form validation
-const form = document.querySelector("[data-form]");
-const formInputs = document.querySelectorAll("[data-form-input]");
-const formBtn = document.querySelector("[data-form-btn]");
-
-formInputs.forEach(input => {
-    input.addEventListener("input", function () {
-        if (form.checkValidity()) {
-            formBtn.removeAttribute("disabled");
-        } else {
-            formBtn.setAttribute("disabled", "");
-        }
-    });
-});
-
-
-// Page navigation
-const navigationLinks = document.querySelectorAll("[data-nav-link]");
-const pages = document.querySelectorAll("[data-page]");
-
-navigationLinks.forEach((link, i) => {
-    link.addEventListener("click", function () {
-        const targetPage = this.innerHTML.toLowerCase();
-        
-        pages.forEach(page => {
-            if (targetPage === page.dataset.page) {
-                page.classList.add("active");
-                window.scrollTo(0, 0);
-            } else {
-                page.classList.remove("active");
-            }
-        });
-
-        navigationLinks.forEach(navLink => {
-            navLink.classList.remove("active");
-        });
-        this.classList.add("active");
-    });
-});
-
-
-// Avatar Image Modal Functionality
-(() => {
-  const avatarBtn = document.querySelector("[data-avatar-btn]");
-  const modalContainer = document.querySelector("[data-image-modal-container]");
-  const modalCloseBtn = document.querySelector("[data-image-modal-close-btn]");
-  const overlay = document.querySelector("[data-image-overlay]");
-
-  if (!avatarBtn || !modalContainer || !modalCloseBtn || !overlay) return;
-
-  const openModal = () => {
-    modalContainer.classList.add("active");
-    overlay.classList.add("active");
-  };
-
-  const closeModal = () => {
-    modalContainer.classList.remove("active");
-    overlay.classList.remove("active");
-  };
-
-  avatarBtn.addEventListener("click", openModal);
-  modalCloseBtn.addEventListener("click", closeModal);
-  overlay.addEventListener("click", closeModal);
-
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && modalContainer.classList.contains("active")) {
-      closeModal();
+    if (savedTheme === "light") {
+        document.body.classList.add("light-theme");
+        icon?.classList.replace("fa-moon", "fa-sun");
     }
-  });
-})();
 
-
-
-// Spotlight Card Effect
-document.querySelectorAll(".card-spotlight").forEach(card => {
-  card.addEventListener("mousemove", (e) => {
-    const rect = card.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-
-    card.style.setProperty("--mouse-x", `${x}px`);
-    card.style.setProperty("--mouse-y", `${y}px`);
-  });
-});
-
-
-
-// Spotlight Card Effect
-document.querySelectorAll(".card-spotlight").forEach(card => {
-  card.addEventListener("mousemove", (e) => {
-    const rect = card.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-
-    card.style.setProperty("--mouse-x", `${x}px`);
-    card.style.setProperty("--mouse-y", `${y}px`);
-  });
-});
-
-
-
-// --- Profile Card Modal with all your requested features ---
-const avatarImg = document.getElementById("sidebar-avatar");
-const profileCardModal = document.getElementById("profile-card-modal");
-
-if (avatarImg && profileCardModal) {
-  const card = profileCardModal.querySelector(".pc-card");
-  const shine = profileCardModal.querySelector(".pc-shine");
-  const overlay = profileCardModal.querySelector(".profile-card-overlay");
-
-  // Function to close the modal
-  const closeModal = () => {
-    profileCardModal.classList.remove("active");
-    // Reset the card's tilt when it closes
-    card.style.transform = `rotateX(0deg) rotateY(0deg)`;
-  };
-
-  // Show the modal when the mouse hovers over the small avatar
-  avatarImg.addEventListener("mouseenter", () => {
-    profileCardModal.classList.add("active");
-  });
-
-  // Hide the modal when the mouse leaves the entire modal area
-  profileCardModal.addEventListener("mouseleave", closeModal);
-
-  // Hide the modal when the overlay (the "balance area") is clicked
-  overlay.addEventListener("click", closeModal);
-
-  // Tilt effect for the card (this is the same shiny tilt effect from before)
-  card.addEventListener("mousemove", (e) => {
-    const rect = card.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    const centerX = rect.width / 2;
-    const centerY = rect.height / 2;
-    const rotateX = ((y - centerY) / centerY) * 10;
-    const rotateY = ((x - centerX) / centerX) * -10;
-
-    card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-    shine.style.setProperty("--pointer-x", `${x}px`);
-    shine.style.setProperty("--pointer-y", `${y}px`);
-  });
+    toggle?.addEventListener("click", () => {
+        const isLight = document.body.classList.toggle("light-theme");
+        localStorage.setItem("portfolio-theme", isLight ? "light" : "dark");
+        icon?.classList.toggle("fa-moon", !isLight);
+        icon?.classList.toggle("fa-sun", isLight);
+    });
 }
 
+function initNavigation() {
+    const navbar = qs("#navbar");
+    const hamburger = qs("#hamburger");
+    const navMenu = qs("#navMenu");
+    const navLinks = qsa(".nav-link");
 
+    const syncNavbar = () => {
+        navbar?.classList.toggle("scrolled", window.scrollY > 16);
+    };
 
+    window.addEventListener("scroll", syncNavbar);
+    syncNavbar();
 
-// ===== VISITOR COUNTER =====
-(function () {
-  const countEl = document.getElementById('visitor-count');
-  if (!countEl) return;
+    hamburger?.addEventListener("click", () => {
+        const isOpen = navMenu?.classList.toggle("active");
+        hamburger.classList.toggle("active", Boolean(isOpen));
+        hamburger.setAttribute("aria-expanded", String(Boolean(isOpen)));
+    });
 
-  let visits = parseInt(localStorage.getItem('pj_portfolio_visits') || '0', 10);
-  visits += 1;
-  localStorage.setItem('pj_portfolio_visits', visits);
+    navLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+            navMenu?.classList.remove("active");
+            hamburger?.classList.remove("active");
+            hamburger?.setAttribute("aria-expanded", "false");
+        });
+    });
 
-  let current = 0;
-  const target = visits;
-  const step = Math.max(1, Math.floor(target / 40));
-  const interval = setInterval(() => {
-    current = Math.min(current + step, target);
-    countEl.textContent = current.toLocaleString();
-    if (current >= target) clearInterval(interval);
-  }, 20);
-})();
+    const sections = navLinks
+        .map((link) => qs(link.getAttribute("href")))
+        .filter(Boolean);
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (!entry.isIntersecting) return;
+                navLinks.forEach((link) => {
+                    link.classList.toggle("active", link.getAttribute("href") === `#${entry.target.id}`);
+                });
+            });
+        },
+        { rootMargin: "-45% 0px -45% 0px", threshold: 0 }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+}
+
+function initCursor() {
+    if (window.matchMedia("(pointer: coarse)").matches) return;
+
+    const cursor = qs(".cursor");
+    const follower = qs(".cursor-follower");
+    if (!cursor || !follower) return;
+
+    let mouseX = 0;
+    let mouseY = 0;
+    let followerX = 0;
+    let followerY = 0;
+
+    window.addEventListener("mousemove", (event) => {
+        mouseX = event.clientX;
+        mouseY = event.clientY;
+        cursor.style.transform = `translate(${mouseX}px, ${mouseY}px) translate(-50%, -50%)`;
+    });
+
+    const animate = () => {
+        followerX += (mouseX - followerX) * 0.18;
+        followerY += (mouseY - followerY) * 0.18;
+        follower.style.transform = `translate(${followerX}px, ${followerY}px) translate(-50%, -50%)`;
+        requestAnimationFrame(animate);
+    };
+    animate();
+
+    qsa("a, button, input, textarea").forEach((element) => {
+        element.addEventListener("mouseenter", () => follower.classList.add("hover"));
+        element.addEventListener("mouseleave", () => follower.classList.remove("hover"));
+    });
+}
+
+function initParticles() {
+    const particles = qs("#particles");
+    if (!particles) return;
+
+    const fragment = document.createDocumentFragment();
+    for (let i = 0; i < 42; i += 1) {
+        const particle = document.createElement("span");
+        particle.className = "particle";
+        particle.style.left = `${Math.random() * 100}%`;
+        particle.style.bottom = `${Math.random() * 100}%`;
+        particle.style.animationDelay = `${Math.random() * 10}s`;
+        particle.style.animationDuration = `${8 + Math.random() * 8}s`;
+        fragment.appendChild(particle);
+    }
+    particles.appendChild(fragment);
+}
+
+function initCounters() {
+    const counters = qsa(".stat-number");
+    const observer = new IntersectionObserver(
+        (entries, obs) => {
+            entries.forEach((entry) => {
+                if (!entry.isIntersecting) return;
+                const counter = entry.target;
+                const target = Number(counter.dataset.target || "0");
+                const duration = 1200;
+                const start = performance.now();
+
+                const tick = (now) => {
+                    const progress = Math.min((now - start) / duration, 1);
+                    counter.textContent = Math.floor(progress * target);
+                    if (progress < 1) requestAnimationFrame(tick);
+                    else counter.textContent = `${target}${target > 1 ? "+" : ""}`;
+                };
+
+                requestAnimationFrame(tick);
+                obs.unobserve(counter);
+            });
+        },
+        { threshold: 0.45 }
+    );
+
+    counters.forEach((counter) => observer.observe(counter));
+}
+
+function initSkillBars() {
+    const bars = qsa(".skill-progress");
+    const observer = new IntersectionObserver(
+        (entries, obs) => {
+            entries.forEach((entry) => {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add("animate");
+                obs.unobserve(entry.target);
+            });
+        },
+        { threshold: 0.5 }
+    );
+
+    bars.forEach((bar) => observer.observe(bar));
+}
+
+function initReveal() {
+    const revealTargets = qsa(
+        ".section-header, .about-text, .stat-card, .service-card, .skill-category, .project-card, .timeline-item, .achievement-card, .resume-card, .contact-item, .contact-form"
+    );
+
+    revealTargets.forEach((target) => target.classList.add("reveal"));
+
+    const observer = new IntersectionObserver(
+        (entries, obs) => {
+            entries.forEach((entry) => {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add("show");
+                obs.unobserve(entry.target);
+            });
+        },
+        { threshold: 0.12 }
+    );
+
+    revealTargets.forEach((target) => observer.observe(target));
+}
+
+function initProjectFilters() {
+    const buttons = qsa(".filter-btn");
+    const cards = qsa(".project-card");
+
+    buttons.forEach((button) => {
+        button.addEventListener("click", () => {
+            const filter = button.dataset.filter;
+            buttons.forEach((item) => item.classList.toggle("active", item === button));
+
+            cards.forEach((card) => {
+                const categories = card.dataset.category?.split(" ") || [];
+                const shouldShow = filter === "all" || categories.includes(filter);
+                card.classList.toggle("hide", !shouldShow);
+            });
+        });
+    });
+}
+
+function initProjectModal() {
+    const modal = qs("#projectModal");
+    const modalBody = qs("#modalBody");
+    const closeButton = qs("#modalClose");
+
+    const closeModal = () => {
+        modal?.classList.remove("active");
+        modal?.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+    };
+
+    qsa(".btn-view-project").forEach((button) => {
+        button.addEventListener("click", () => {
+            const project = projectDetails[button.dataset.project];
+            if (!project || !modal || !modalBody) return;
+
+            modalBody.innerHTML = `
+                <h3 id="modalTitle">${project.title}</h3>
+                <p>${project.summary}</p>
+                <div class="modal-tags">
+                    ${project.stack.map((item) => `<span class="tag">${item}</span>`).join("")}
+                </div>
+                <ul>
+                    ${project.points.map((point) => `<li>${point}</li>`).join("")}
+                </ul>
+            `;
+
+            modal.classList.add("active");
+            modal.setAttribute("aria-hidden", "false");
+            document.body.style.overflow = "hidden";
+        });
+    });
+
+    closeButton?.addEventListener("click", closeModal);
+    qs(".modal-overlay")?.addEventListener("click", closeModal);
+    window.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") closeModal();
+    });
+}
+
+function initContactForm() {
+    const form = qs("#contactForm");
+    if (!form) return;
+
+    form.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        const formData = new FormData(form);
+        const name = String(formData.get("name") || "").trim();
+        const email = String(formData.get("email") || "").trim();
+        const subject = String(formData.get("subject") || "Portfolio Contact").trim();
+        const message = String(formData.get("message") || "").trim();
+
+        const body = [
+            `Name: ${name}`,
+            `Email: ${email}`,
+            "",
+            message
+        ].join("\n");
+
+        window.location.href = `mailto:poovarasanpoovi20@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    initLoader();
+    initTheme();
+    initNavigation();
+    initCursor();
+    initParticles();
+    initCounters();
+    initSkillBars();
+    initReveal();
+    initProjectFilters();
+    initProjectModal();
+    initContactForm();
+});
